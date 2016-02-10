@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Link Loader</name>
+    <author>Patrick Mutwiri</author>
+    <version>1.0.0</version>
+    <authorEmail>pmutwiri@gbc.co.ke</authorEmail>
+	<authorUrl>http://https://github.com/patricmutwiri</authorUrl>
+    <description>A simple module to load links and intro texts as grids. http://https://github.com/patricmutwiri/loader </description>
+    <files>
+        <filename>mod_loader.xml</filename>
+        <filename module="mod_loader">mod_loader.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+			<fieldset name="advanced">
+				<field
+					name="menu_id"
+					type="text"
+					default="900"
+					label="Menu ID"
+					description="Menu ID to load submenus" />
+			</fieldset>
+		</fields>
+    </config>
+</extension>
