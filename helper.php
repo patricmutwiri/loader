@@ -12,13 +12,18 @@ class ModLoaderHelper
     {
         $menuid = $params->get('menu_id');
         $app = JFactory::getApplication();
-        $menu = $app->getMenu();
+        $menu = $app->getMenu(); 
+        $grid  = array();
         if(!empty($menuid)){ 
-            $grid  = '<div class="col-xs-12">';
-            
-            $grid .= '<div>';
+            $tmenu = $menu->getItem($menuid);
+            //$grid .= json_encode($tmenu);
+            $childs = $menu->getItems('parent_id', $menuid);
+            if( !empty($childs) )
+            {
+                $grid[] = $childs;
+            }
         } else {
-            $grid = '';
+            $grid[] = '';
         }
         return $grid;
     }
